@@ -38,7 +38,7 @@ function init() {
 }
 
 function addModel() {
-	fetch("https://sand-by.github.io/jsonTXTYTZ/instances.json").then(r => r.json()).then(instanceData => {
+	fetch("https://sand-by.github.io/jsonTXTYTZ/instances.json",{mode: 'cors'}).then(r => r.json()).then(instanceData => {
 		let geometry = new BoxGeometry(0.1, 0.1, 0.1)
 		let material = new MeshPhongMaterial()
 		let mesh = new InstancedMesh(geometry, material, instanceData.length)
